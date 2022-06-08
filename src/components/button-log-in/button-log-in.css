@@ -1,0 +1,22 @@
+.header__button{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    text-decoration: none !important;
+    transition: all 0.3s ease-in-out;
+}
+._in{
+    margin-right: 20px;
+}
+._up{
+    color: #52C41A;
+    border: 1px solid #52C41A;
+    padding: 6px 20px;
+    border-radius: 5px;
+}
+._in:hover{
+    color: #52C41A !important;
+}
+._up:hover{
+    color: #000;
+}

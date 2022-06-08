@@ -1,0 +1,40 @@
+.wrapper {
+  background-color: #ebeef3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Inter';
+  padding-bottom: 1%;
+}
+.page {
+  flex: 1 1 auto;
+  width: 838px;
+  margin: 0 auto;
+}
+p img {
+  max-width: 100%;
+}
+.p::-webkit-scrollbar {
+  display: none;
+}
+.p {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+@media (max-width: 932px) {
+  .page {
+    width: 738px;
+  }
+}
+
+@media (max-width: 751px) {
+  .page {
+    width: 438px;
+  }
+}
+@media (max-width: 440px) {
+  .page {
+    width: 250px;
+  }
+}

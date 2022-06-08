@@ -1,0 +1,36 @@
+.header__auth{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.article__user-info-header {
+    display: flex;
+    align-items: center;
+}
+.article__user-info-header img {
+    margin-right: 27px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+}
+._create{
+    font-size: 14px;
+    line-height: 157%;
+    display: flex;
+    align-items: center;
+    border: 1px solid #52C41A;
+    border-radius: 5px;
+    padding: 6px 10px;
+    margin-right: 27px;
+    text-decoration: none !important;
+    color: #52C41A;
+}
+._log-out{
+    color: #000;
+    border: 1px solid rgba(0, 0, 0, 0.75);
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+

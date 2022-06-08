@@ -1,0 +1,36 @@
+.ant-form {
+  width: 384px;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0px 5px 30px 10px rgba(0, 0, 0, 0.2197);
+
+}
+div {
+  padding: 0;
+}
+label {
+  height: 100%;
+  padding: 0 !important;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #262626;
+}
+.form-title {
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 18px;
+  margin-bottom: 21px;
+}
+.login-form-button {
+  width: 100%;
+  margin: 12px 0 8px 0;
+}
+span {
+  display: block;
+  text-align: center;
+}
+.ant-divider {
+  margin: 8px 0;
+}
