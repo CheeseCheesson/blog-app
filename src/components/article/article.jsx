@@ -7,8 +7,8 @@ import { Link, useParams } from 'react-router-dom'
 
 import Card from '../card/card'
 import './article.css'
-import ErrorMessage from '../../error-massege'
-import PopoverItem from '../../popover/popover'
+import ErrorMessage from '../UI/error-massege'
+import PopoverItem from '../UI/popover/popover'
 
 const Article = ({ item, controllerFlag, confirmDeletion, isError }) => {
   const { slug } = useParams()

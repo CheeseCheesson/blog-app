@@ -4,10 +4,10 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 import apiService from '../../services/apiService'
-import ArticleFormCompleted from '../../components/UI/article-form/article-form-completed/article-form-completed'
-import SuccessMessage from '../../components/success-message/success-message'
-import ErrorMessage from '../../components/error-massege/error-message'
-import Loader from '../../components/loader/loader'
+import ArticleFormCompleted from '../../components/article-form/article-form-completed/article-form-completed'
+import SuccessMessage from '../../components/UI/success-message/success-message'
+import ErrorMessage from '../../components/UI/error-massege/error-message'
+import Loader from '../../components/UI/loader/loader'
 const ArticleEdit = () => {
   const { slug } = useParams()
   const [articleTitle, setArticleTitle] = useState('')

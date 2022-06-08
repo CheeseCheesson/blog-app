@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { fetchUserUpdate, errorNull } from '../../redux/user'
-import EditProfileForm from '../../components/UI/edit-profile-form/edit-profile-form'
-import SuccessMessage from '../../components/success-message/success-message'
-import ErrorMessage from '../../components/error-massege/error-message'
-import Loader from '../../components/loader/loader'
+import EditProfileForm from '../../components/edit-profile-form/edit-profile-form'
+import SuccessMessage from '../../components/UI/success-message/success-message'
+import ErrorMessage from '../../components/UI/error-massege/error-message'
+import Loader from '../../components/UI/loader/loader'
 
 const Profile = () => {
   const dispatch = useDispatch()

@@ -2,8 +2,8 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import { logOutUser } from '../../redux/user'
-import avatar from '../../assets/avatar.png'
+import { logOutUser } from '../../../redux/user'
+import avatar from '../../../assets/avatar.png'
 import './button-log-out.css'
 
 const ButtonLogOut = () => {

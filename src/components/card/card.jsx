@@ -6,8 +6,8 @@ import { HeartOutlined, HeartFilled } from '@ant-design/icons'
 import { format } from 'date-fns'
 import { Link } from 'react-router-dom'
 
-import apiService from '../../../services/apiService'
-import avatar from '../../../assets/avatar.png'
+import apiService from '../../services/apiService'
+import avatar from '../../assets/avatar.png'
 import './card.css'
 
 const Card = ({ title, favorited, favoritesCount, tagList, author, description, createdAt, slug, children }) => {

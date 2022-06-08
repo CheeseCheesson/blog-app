@@ -2,8 +2,8 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import ButtonLogOut from '../../button-log-out/button-log-out'
-import ButtonLogIn from '../../button-log-in/button-log-in'
+import ButtonLogOut from '../UI/button-log-out/button-log-out'
+import ButtonLogIn from '../UI/button-log-in/button-log-in'
 import './header.css'
 
 const Header = () => {

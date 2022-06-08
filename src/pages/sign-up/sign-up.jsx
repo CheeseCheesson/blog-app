@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-import SignUpForm from '../../components/UI/sign-up-form/sign-up-form'
+import SignUpForm from '../../components/sign-up-form/sign-up-form'
 import { fetchUserRegistration, errorNull } from '../../redux/user'
-import Loader from '../../components/loader/loader'
+import Loader from '../../components/UI/loader/loader'
 
 const SignUp = () => {
   const dispatch = useDispatch()

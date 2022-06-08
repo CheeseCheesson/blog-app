@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import ArticleForm from '../../components/UI/article-form/article-form'
+import ArticleForm from '../../components/article-form/article-form'
 import apiService from '../../services/apiService'
-import SuccessMessage from '../../components/success-message/success-message'
-import ErrorMessage from '../../components/error-massege/error-message'
-import Loader from '../../components/loader/loader'
+import SuccessMessage from '../../components/UI/success-message/success-message'
+import ErrorMessage from '../../components/UI/error-massege/error-message'
+import Loader from '../../components/UI/loader/loader'
 
 const NewArticle = () => {
   const [isLoading, setLoading] = useState(false)

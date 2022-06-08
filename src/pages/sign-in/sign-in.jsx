@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 import { fetchUserLogIn, errorNull } from '../../redux/user'
-import SignInForm from '../../components/UI/sign-in-form/sign-in-form'
-import Loader from '../../components/loader/loader'
+import SignInForm from '../../components/sign-in-form/sign-in-form'
+import Loader from '../../components/UI/loader/loader'
 
 const SignIn = () => {
   const dispatch = useDispatch()

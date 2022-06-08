@@ -3,9 +3,9 @@ import { Pagination } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { fetchGetArticlesByPageNum, paginationPageChange } from '../../redux/articles'
-import Card from '../../components/UI/card/card'
-import ErrorMessage from '../../components/error-massege/error-message'
-import Loader from '../../components/loader/loader'
+import Card from '../../components/card/card'
+import ErrorMessage from '../../components/UI/error-massege/error-message'
+import Loader from '../../components/UI/loader/loader'
 
 import './card-list.css'
 

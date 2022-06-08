@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams, useNavigate } from 'react-router-dom'
 
-import Article from '../../components/UI/article/article'
+import Article from '../../components/article/article'
 import apiService from '../../services/apiService'
-import SuccessMessage from '../../components/success-message/success-message'
-import Loader from '../../components/loader/loader'
-import ErrorMessage from '../../components/error-massege'
+import SuccessMessage from '../../components/UI/success-message/success-message'
+import Loader from '../../components/UI/loader/loader'
+import ErrorMessage from '../../components/UI/error-massege'
 
 const ArticleOne = () => {
   const { slug } = useParams()
