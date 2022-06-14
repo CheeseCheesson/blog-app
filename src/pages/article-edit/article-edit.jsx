@@ -21,7 +21,7 @@ const ArticleEdit = () => {
   const { userData } = useSelector((state) => state.user)
   const { list } = useSelector((state) => state.articles)
   const navigate = useNavigate()
-
+console.log(slug);
   const currentArticle = list.find(article => article.slug === slug)
   if(currentArticle.author.username !== userData.username) {
     navigate('/')

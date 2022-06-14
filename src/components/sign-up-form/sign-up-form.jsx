@@ -1,16 +1,57 @@
 /* eslint-disable */
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { Form, Input, Button, Checkbox, Divider } from 'antd'
+import { useDispatch } from 'react-redux'
 
 import styles from './sign-up-form.module.css'
+//cheese cheese@ch.ch
+const SignUpForm = ({ onRegistration, errorMessage, onErrorNull, errorData }) => {
+  const dispatch = useDispatch()
+  const [viewErrorUp, setViewErrorUp] = useState({})
+  const [stateError, setStateError] = useState(false)
 
-const SignUpForm = ({ onRegistration, errorMessage }) => {
+  const [form] = Form.useForm()
+
+  const nameValueUsername = Form.useWatch('username', form)
+  const nameValueEmail = Form.useWatch('email', form)
+
+  useEffect(() => {
+    let isMounted = true
+
+    if (errorMessage && isMounted) {
+      setStateError(true)
+    }
+    if ((nameValueEmail || nameValueUsername) && isMounted && stateError) {
+      setViewErrorUp({})
+      setStateError(false)
+      return () => {
+        setStateError(false)
+        dispatch(onErrorNull())
+      }
+    }
+    if (errorMessage && isMounted) {
+      setViewErrorUp({
+        email: `email: ${errorData['email']}`,
+        username: `Username: ${errorData['username']}`,
+      })
+    }
+    window.addEventListener('beforeunload', () => dispatch(onErrorNull()))
+    return () => {
+      dispatch(onErrorNull())
+      window.removeEventListener('beforeunload', () => dispatch(onErrorNull()))
+      setStateError(false)
+      setViewErrorUp({})
+      isMounted = false
+    }
+  }, [nameValueEmail, nameValueUsername, errorMessage, dispatch, onErrorNull])
+
   return (
     <Form
       layout="vertical"
       size="large"
+      form={form}
       className={styles['ant-form']}
       initialValues={{
         remember: true,
@@ -27,7 +68,7 @@ const SignUpForm = ({ onRegistration, errorMessage }) => {
         className={styles['ant-form-item']}
         name="username"
         label="Username"
-        validateStatus={errorMessage ? 'error' : 'success'}
+        validateStatus={errorMessage && errorData.hasOwnProperty('username') ? 'error' : 'success'}
         rules={[
           {
             required: true,
@@ -39,12 +80,14 @@ const SignUpForm = ({ onRegistration, errorMessage }) => {
       >
         <Input type="text" placeholder="Username" />
       </Form.Item>
-
+      {errorMessage && errorData.hasOwnProperty('username') && (
+        <p style={{ color: '#fc6468' }}>Username: {viewErrorUp['username']}</p>
+      )}
       <Form.Item
         className={styles['ant-form-item']}
         label="Email address"
         name="email"
-        validateStatus={errorMessage ? 'error' : 'success'}
+        validateStatus={errorMessage && errorData.hasOwnProperty('email') ? 'error' : 'success'}
         rules={[
           {
             type: 'email',
@@ -55,7 +98,9 @@ const SignUpForm = ({ onRegistration, errorMessage }) => {
       >
         <Input placeholder="Email address" />
       </Form.Item>
-      {errorMessage && <p style={{ color: '#fc6468' }}>{errorMessage}</p>}
+      {errorMessage && errorData.hasOwnProperty('email') && (
+        <p style={{ color: '#fc6468' }}>email: {viewErrorUp['email']}</p>
+      )}
       <Form.Item
         className={styles['ant-form-item']}
         name="password"

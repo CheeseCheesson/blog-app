@@ -81,6 +81,7 @@ const userSlice = createSlice({
     status: null,
     error: null,
     bio: null,
+    errorData: null,
   },
 
   reducers: {
@@ -88,10 +89,12 @@ const userSlice = createSlice({
       state.userData = null
       state.status = null
       state.error = null
+      state.errorData = null
     },
 
     errorNull(state) {
       state.error = null
+      state.errorData = null
     },
   },
 
@@ -113,12 +116,14 @@ const userSlice = createSlice({
         if (action.payload.errors.error) {
           errStr += action.payload.errors.error.status
         } else {
+          console.log(action.payload.errors)
           const errArr = Object.entries(action.payload.errors)
           errArr.forEach((item) => {
             errStr += `${item[0]}: ${item[1]} `
           })
         }
         state.error = errStr
+        state.errorData = action.payload.errors
       }
     },
     [fetchUserRegistration.rejected]: (state, action) => {
@@ -148,6 +153,7 @@ const userSlice = createSlice({
           errStr = `${errArr[0][0]}: ${errArr[0][1]}`
         }
         state.error = errStr
+        state.errorData = action.payload.errors
       }
     },
     [fetchUserLogIn.rejected]: (state, action) => {
@@ -179,6 +185,7 @@ const userSlice = createSlice({
           })
         }
         state.error = errStr
+        state.errorData = action.payload.errors
       }
     },
     [fetchUserUpdate.rejected]: (state, action) => {

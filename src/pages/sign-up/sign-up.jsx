@@ -8,7 +8,7 @@ import Loader from '../../components/UI/loader/loader'
 
 const SignUp = () => {
   const dispatch = useDispatch()
-  const { error, status } = useSelector((state) => state.user)
+  const { error, status, errorData } = useSelector((state) => state.user)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -29,7 +29,14 @@ const SignUp = () => {
 
   return (
     <>
-      {status !== 'loading' && <SignUpForm onRegistration={handleRegistration} errorMessage={error} />}
+      {status !== 'loading' && (
+        <SignUpForm
+          errorData={errorData}
+          errorMessage={error}
+          onErrorNull={errorNull}
+          onRegistration={handleRegistration}
+        />
+      )}
       {status === 'loading' && <Loader />}
     </>
   )

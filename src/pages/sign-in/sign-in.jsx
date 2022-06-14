@@ -9,7 +9,7 @@ import Loader from '../../components/UI/loader/loader'
 
 const SignIn = () => {
   const dispatch = useDispatch()
-  const { error, status } = useSelector((state) => state.user)
+  const { error, status, errorData } = useSelector((state) => state.user)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -17,7 +17,6 @@ const SignIn = () => {
       navigate('/articles')
       return () => dispatch(errorNull())
     }
-
   }, [error, dispatch, status])
 
   const handleAuthenticated = (val) => {
@@ -30,7 +29,14 @@ const SignIn = () => {
 
   return (
     <>
-      {status !== 'loading' && <SignInForm errorMessage={error} onAuthenticated={handleAuthenticated} />}
+      {status !== 'loading' && (
+        <SignInForm
+          errorData={errorData}
+          errorMessage={error}
+          onAuthenticated={handleAuthenticated}
+          onErrorNull={errorNull}
+        />
+      )}
       {status === 'loading' && <Loader />}
     </>
   )

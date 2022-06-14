@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Form, Input, Button } from 'antd'
 import { useNavigate } from 'react-router-dom'
 
-import styles from '../article-form.module.css'
+import styles from './article-form.module.css'
 
 const ArticleFormCompleted = ({ transferData, title, description, articleTitle, articleBody, tagList }) => {
   const navigate = useNavigate()
